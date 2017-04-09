@@ -1,0 +1,12 @@
+<a id="sign-in-facebook" class="btn btn-lg btn-block btn-omniauth"
+href="<%= omniauth_authorize_path(:user, :facebook) %>" role="button">
+  <span class="fa fa-facebook-official"></span>
+  <span class="sign-in-text">Sign in with Facebook</span>
+</a>
+<a id="sign-in-google" class="btn btn-lg btn-block btn-default btn-omniauth"
+href="<%= omniauth_authorize_path(:user, :google_oauth2) %>" role="button">
+  <span>
+    <%= image_tag 'g-logo.png', height: '24', width: '24' %>
+    Sign in with Google
+  </span>
+</a>

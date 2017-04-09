@@ -18,3 +18,4 @@
 
 .ruby-version
 .rbenv-gemsets
+.env
