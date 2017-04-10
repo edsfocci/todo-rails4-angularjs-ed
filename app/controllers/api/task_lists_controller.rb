@@ -30,10 +30,10 @@ class Api::TaskListsController < Api::BaseController
   end
 
   def task_list
-    @task_list ||= TaskList.find(params[:id])    
+    @task_list ||= TaskList.find(params[:id])
   end
 
   def safe_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :share)
   end
 end

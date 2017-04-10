@@ -9,16 +9,14 @@ angular.module('todoApp').controller "DashboardController", ($scope, $routeParam
         $location.url("/task_lists/#{list.id}")
 
   $scope.shareList = (list) ->
+    listsService = @listsService
+
     FB.ui({
       method: 'share',
       href:   "https://kambda-todo-test.herokuapp.com/task_lists/#{list.id}"
     }, (response) ->
       if (response)
-        listsService = new TaskList(serverErrorHandler)
-        listsService.update list, {
-          id:     list.id,
-          share:  true
-        }
+        listsService.update list, share: true
     )
 
   $scope.deleteList = (list, index) ->
