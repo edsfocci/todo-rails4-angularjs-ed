@@ -1,4 +1,4 @@
-angular.module('todoApp').controller "DashboardController", ($scope, $routeParams, $location, TaskList) ->
+angular.module('todoApp').controller "DashboardController", ($scope, $routeParams, $location, $window, TaskList) ->
 
   $scope.init = ->
     @listsService = new TaskList(serverErrorHandler)
@@ -9,11 +9,12 @@ angular.module('todoApp').controller "DashboardController", ($scope, $routeParam
         $location.url("/task_lists/#{list.id}")
 
   $scope.shareList = (list) ->
+    $window.rere = 'hi'
     FB.ui({
       method: 'share',
       href:   "https://kambda-todo-test.herokuapp.com/task_lists/#{list.id}"
     }, (response) ->
-      console.log('List #{list.id} shared')
+      $window.rere = response
     )
 
   $scope.deleteList = (list, index) ->
