@@ -11,7 +11,7 @@ angular.module('todoApp').controller "DashboardController", ($scope, $routeParam
   $scope.shareList = (list) ->
     FB.ui({
       method: 'share',
-      href:   "http://localhost:3000/task_lists/#{list.id}"
+      href:   "https://kambda-todo-test.herokuapp.com/task_lists/#{list.id}"
     }, (response) ->
       console.log('List #{list.id} shared')
     )
