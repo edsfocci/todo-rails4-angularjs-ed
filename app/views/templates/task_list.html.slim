@@ -1,5 +1,5 @@
 .ng-cloak(ng-init="init()")
-  .sort-links        
+  .sort-links
     p.text-muted
       ' &nbsp;
       span(ng-show="sortMethod == dueDateNullLast")
@@ -12,7 +12,7 @@
       a(href="" ng-class="{active: sortMethod == dueDateNullLast}" ng-click="changeSortMethod(dueDateNullLast)")
         ' due date
   div.panel.panel-info.task-list
-    div.panel-heading     
+    div.panel-heading
       editablespan(model="list.name" on-ready="listNameEdited(list.name)" input-class="form-control" span-class="list-name")
 
     form#new_task(ng-submit="addTask()")
@@ -34,4 +34,4 @@
               span.glyphicon.glyphicon-time
         .task-due-date(ng-show="task.due_date")
           small
-            ' Due date: {{task.due_date}}    
+            ' Due date: {{task.due_date}}
