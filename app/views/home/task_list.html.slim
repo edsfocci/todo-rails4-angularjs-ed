@@ -1,0 +1,18 @@
+.sort-links
+  p.text-muted
+    ' &nbsp;
+  p
+    ' sort by:
+    a#sort-priority(href="")
+      ' priority
+    ' |
+    a#sort-due-date(href="")
+      ' due date
+div.panel.panel-info.task-list
+  div.panel-heading
+    span#list-name-shared.list-name
+
+  ul#list-group-shared.list-group
+
+javascript:
+  window.taskList = #{@task_list};
