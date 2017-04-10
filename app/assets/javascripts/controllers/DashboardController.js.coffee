@@ -15,7 +15,10 @@ angular.module('todoApp').controller "DashboardController", ($scope, $routeParam
     }, (response) ->
       if (response)
         listsService = new TaskList(serverErrorHandler)
-        listsService.update list, share: true
+        listsService.update list, {
+          id:     list.id,
+          share:  true
+        }
     )
 
   $scope.deleteList = (list, index) ->
