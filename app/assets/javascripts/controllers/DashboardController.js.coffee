@@ -14,7 +14,8 @@ angular.module('todoApp').controller "DashboardController", ($scope, $routeParam
       href:   "https://kambda-todo-test.herokuapp.com/task_lists/#{list.id}"
     }, (response) ->
       if (response)
-        @listsService.update list, share: true
+        listsService = new TaskList(serverErrorHandler)
+        listsService.update list, share: true
     )
 
   $scope.deleteList = (list, index) ->
