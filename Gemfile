@@ -16,6 +16,7 @@ gem 'active_model_serializers'
 gem 'jquery-ui-rails', '= 4.0.3'
 gem 'acts_as_list'
 
+gem 'puma'
 gem 'omniauth-facebook'
 gem 'omniauth-google-oauth2'
 
